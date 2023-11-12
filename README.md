@@ -1,1 +1,1 @@
-# spring-boot-sandbox
+# angular-spring-boot

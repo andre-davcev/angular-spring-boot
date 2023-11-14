@@ -3,6 +3,8 @@
   "editor.guides.bracketPairs": "active",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
   "files.exclude": {
     "**/*.js": {
       "when": "$(basename).ts"

@@ -9,10 +9,15 @@ import reactor.core.publisher.Mono;
 @RequestMapping(ReservationResource.ROOM_V_1_RESERVATION)
 @CrossOrigin
 public class ReservationResource {
-    public static final String ROOM_V_1_RESERVATION = "/room/v1/reservation/";
+    public static final String ROOM_V_1_RESERVATION = "/room/v1/reservation";
 
     @GetMapping(path = "{roomId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Reservation> getReservationById(@PathVariable String roomId) {
         return null;
+    }
+
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<String> createReservation(@RequestBody Mono<Reservation> reservation) {
+        return Mono.just("{}");
     }
 }

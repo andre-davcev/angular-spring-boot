@@ -1,0 +1,9 @@
+POST http://localhost:8080/room/v1/reservation HTTP/1.1
+content-type: application/json
+
+{
+    "roomNumber": 1234,
+    "checkIn": "2019-05-03",
+    "checkOut": "2019-05-09",
+    "price": 150
+}

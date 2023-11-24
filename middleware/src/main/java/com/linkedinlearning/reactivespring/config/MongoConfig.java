@@ -13,24 +13,19 @@ import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.SimpleReactiveMongoDatabaseFactory;
 
 
-@Profile(value = "local")
 @Configuration
+@Profile(value = "local")
 @Import(EmbeddedMongoAutoConfiguration.class)
-public class DataConfig {
-  public static final String DATABASE_NAME = "reservations";
+public class MongoConfig {
+  public static final String DATABASE_NAME = "app";
 
   @Bean
   public MongoClient mongoClient() {
     return MongoClients.create();
   }
 
-//  @Bean
-//  public ReactiveMongoTemplate reactiveMongoTemplate(MongoClient mongoClient) {
-//    return new ReactiveMongoTemplate(mongoClient, DATABASE_NAME);
-//  }
-
   @Bean
-  public ReactiveMongoDatabaseFactory mongoDatabaseFactory(MongoClient mongoClient) {
+  public ReactiveMongoDatabaseFactory reactiveMongoDatabaseFactory(MongoClient mongoClient) {
     return new SimpleReactiveMongoDatabaseFactory(mongoClient, DATABASE_NAME);
   }
 
